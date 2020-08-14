@@ -201,10 +201,9 @@ select.addEventListener('change', function(){
 	 if(start!=0){
 		end--
 	 }
+	end= Math.min(end, addrnew.length)
 	for(let i=start; i<end; i++){
-			if(isValid(addrnew[i],/(?:\.|=)(?:jpg|jpeg|png|bmp|ico|gif|tif|tiff)/g)){
-				visio.push('<a href="'+addrnew[i]+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
-			}
+		visio.push('<a href="'+addrnew[i]+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
 	}
 	document.getElementById("work_area").innerHTML=visio.join('')
 });
