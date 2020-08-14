@@ -138,6 +138,7 @@ for(k;k<stringArray.length; k++){
 							  rez_func2(element,urls.length)
 							 	
 						}else if(isValid(element,/(?:\.|=)(?:jpg|jpeg|png|bmp|ico|gif|tif|tiff)/g)){
+							alert('oo')
 							addrnew.push(element)
 						}
 				}
