@@ -143,6 +143,7 @@ for(k;k<stringArray.length; k++){
 						}else if(isValid(element,/(?:\.|=)(?:jpg|jpeg|png|bmp|ico|gif|tif|tiff)/g)){
 							alert('oo')
 							addrnew.push(element)
+							alert(addrnew[0])
 						}
 				}
 			}
