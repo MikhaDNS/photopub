@@ -167,8 +167,6 @@ function rez_imgout(){
 	}else {
 		img_size(500,500)
 	}
-	document.getElementById("ba").style.display='inline-block';
-	document.getElementById("fr").style.display='inline-block';
 	document.getElementById("finded").style.display='block';
 	document.getElementById("mySelectId").style.display='block';
 	document.getElementById("finded").innerHTML="Найдено изображений: "+(addrnew.length).toLocaleString()
@@ -176,6 +174,13 @@ function rez_imgout(){
 	let objSel = document.getElementById("mySelectId");
 	for(let z=0; z<kolich; z++){
 		objSel.options[z] = new Option(z+1, z);
+	}
+	if(kolich!=1){
+		document.getElementById("ba").style.display='none';
+	document.getElementById("fr").style.display='inline-block';
+	}else{
+           document.getElementById("ba").style.display='none';
+	document.getElementById("fr").style.display='none';
 	}
 	let visio=[]
 		document.getElementById("work_area").style.display='block';
