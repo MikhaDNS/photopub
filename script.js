@@ -182,7 +182,7 @@ function rez_imgout(){
 			visio.push('Нет ссылок на файлы изображений!')
 		}else{
 			for(let i=0; i<consta; i++){
-			     visio.push('<a href="'+addrnew[i]+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
+			     visio.push('<a href="'+i+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
 			
 			}
 		}
@@ -203,7 +203,7 @@ select.addEventListener('change', function(){
 	 }
 	end= Math.min(end, addrnew.length)
 	for(let i=start; i<end; i++){
-		visio.push('<a href="'+addrnew[i]+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
+		visio.push('<a href="'+i+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
 	}
 	document.getElementById("work_area").innerHTML=visio.join('')
 });
