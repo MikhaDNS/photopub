@@ -1,8 +1,8 @@
  html,body{
 	 height:100%;
 	 width:100%;
-	 margin:10px;
-	 padding:10px;
+	 margin:0;
+	 padding:0;
 	 background: #38ab66;
 	 font-size: 20px;
 	 text-align: center;
@@ -20,7 +20,8 @@
 .finded_text{
 	text-align: left;
 	font-size: 30px; 
-	color: #e31269
+	color: #e31269;
+	margin:20px;
 }
  textarea {
 	 margin: 20px auto;
@@ -80,6 +81,7 @@ border: solid 3px #fff;
 outline: 0;
 background: white;
 margin: 10px auto;
+margin-bottom:50px;
 width:auto;
 font-size: 20px;
 display: inline-block;
