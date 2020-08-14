@@ -93,7 +93,6 @@ let address
 		document.getElementById("neww").innerHTML="Ждите.."
 		document.getElementById("neww").style.background = "red";
 	}
-	alert(addrnew[0])
 }
 
 function rez_func(){
@@ -127,7 +126,6 @@ for(k;k<stringArray.length; k++){
 			document.getElementById("neww").innerHTML="Скачать БД"
 			document.getElementById("neww").style.background = "#2b995b";
 		  if (xml.status == 200) {
-			addrnew.push('http://'+host)
 			let parser = new DOMParser()
 			let xml1 = parser.parseFromString(xml.response, 'application/xml')
 
@@ -153,14 +151,12 @@ for(k;k<stringArray.length; k++){
 
 
 }	
-	alert(addrnew[0])
 }
 
 let countIMG
 let consta
 
 function rez_imgout(){
-	alert(addrnew[0],addrnew[1])
 	document.getElementById("imgout").innerHTML="Ждите.."
 		document.getElementById("imgout").style.background = "red";
 		alert('Колличество не проиндексированных: '+errorlink)
@@ -185,7 +181,7 @@ function rez_imgout(){
 			visio.push('Нет ссылок на файлы изображений!')
 		}else{
 			for(let i=0; i<consta; i++){
-			     visio.push('<a href="'+i+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
+			     visio.push('<a href="'+addrnew[i]+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
 			
 			}
 		}
@@ -206,7 +202,7 @@ select.addEventListener('change', function(){
 	 }
 	end= Math.min(end, addrnew.length)
 	for(let i=start; i<end; i++){
-		visio.push('<a href="'+i+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
+		visio.push('<a href="'+addrnew[i]+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
 	}
 	document.getElementById("work_area").innerHTML=visio.join('')
 });
