@@ -215,7 +215,12 @@ document.querySelector('#ba').addEventListener('click', function() {
 	tek--
 	select.selectedIndex = tek
 });
-
+document.querySelector('#fr').addEventListener('click', function() {
+	let select=document.querySelector('#mySelectId');
+	let tek=parseInt(select.value,10)
+	tek++
+	select.selectedIndex = tek
+});
 
 function rez_randall(){
 let randval = Math.floor(Math.random() * addrnew.length)	
