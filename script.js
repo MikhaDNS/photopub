@@ -167,8 +167,8 @@ function rez_imgout(){
 	}else {
 		img_size(500,500)
 	}
-	document.getElementById("ba").style.display='block';
-	document.getElementById("fr").style.display='block';
+	document.getElementById("ba").style.display='inline-block';
+	document.getElementById("fr").style.display='inline-block';
 	document.getElementById("finded").style.display='block';
 	document.getElementById("mySelectId").style.display='block';
 	document.getElementById("finded").innerHTML="Найдено изображений: "+(addrnew.length).toLocaleString()
