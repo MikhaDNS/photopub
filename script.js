@@ -209,8 +209,8 @@ select.addEventListener('change', function(){
 	document.getElementById("work_area").innerHTML=visio.join('')
 });
 
-document.querySelector('#back').addEventListener('click', function() {
-  alert(this.value)
+document.querySelector('#ba').addEventListener('click', function() {
+  alert(document.querySelector('#mySelectId').value)
 });
 
 
