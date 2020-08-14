@@ -182,9 +182,8 @@ function rez_imgout(){
 			visio.push('Нет ссылок на файлы изображений!')
 		}else{
 			for(let i=0; i<consta; i++){
-					if(isValid(addrnew[i],/(?:\.|=)(?:jpg|jpeg|png|bmp|ico|gif|tif|tiff)/g)){
-						visio.push('<a href="'+addrnew[i]+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
-					}
+			     visio.push('<a href="'+addrnew[i]+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
+			
 			}
 		}
 		document.getElementById("work_area").innerHTML=visio.join('')
