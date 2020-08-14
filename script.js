@@ -195,9 +195,6 @@ function change_img(val){
 	 let visio=[]
 	 let start=consta*val
 	 let end=consta*(val+1)
-	 if(start!=0){
-		end--
-	 }
 	end= Math.min(end, addrnew.length)
 	for(let i=start; i<end; i++){
 		visio.push('<a href="'+addrnew[i]+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
