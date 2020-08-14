@@ -191,11 +191,7 @@ function rez_imgout(){
 	document.getElementById("imgout").innerHTML="Показать изображения из БД"
 	document.getElementById("imgout").style.background = "#2b995b";
 }
-
-var select = document.getElementById('mySelectId');
-
-select.addEventListener('change', function(){  
-  let val = parseInt(this.value,10);
+function change_img(val){
 	 let visio=[]
 	 let start=consta*val
 	 let end=consta*(val+1)
@@ -207,18 +203,26 @@ select.addEventListener('change', function(){
 		visio.push('<a href="'+addrnew[i]+'" target="_blank"><img src="'+addrnew[i]+'"></a>')
 	}
 	document.getElementById("work_area").innerHTML=visio.join('')
+}
+let select = document.getElementById('mySelectId');
+
+select.addEventListener('change', function(){  
+  let val = parseInt(this.value,10);
+change_img(val)
 });
 
 document.querySelector('#ba').addEventListener('click', function() {
 	let select=document.querySelector('#mySelectId');
 	let tek=parseInt(select.value,10)
 	tek--
+	change_img(tek)
 	select.selectedIndex = tek
 });
 document.querySelector('#fr').addEventListener('click', function() {
 	let select=document.querySelector('#mySelectId');
 	let tek=parseInt(select.value,10)
 	tek++
+	change_img(tek)
 	select.selectedIndex = tek
 });
 
