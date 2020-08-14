@@ -209,6 +209,10 @@ select.addEventListener('change', function(){
 	document.getElementById("work_area").innerHTML=visio.join('')
 });
 
+document.querySelector('#back').addEventListener('click', function() {
+  alert(this.value)
+});
+
 
 function rez_randall(){
 let randval = Math.floor(Math.random() * addrnew.length)	
