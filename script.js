@@ -94,6 +94,7 @@ let address
 		document.getElementById("neww").innerHTML="Ждите.."
 		document.getElementById("neww").style.background = "red";
 	}
+	alert(addrnew[0])
 }
 
 function rez_func(){
