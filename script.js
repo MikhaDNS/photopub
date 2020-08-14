@@ -14,7 +14,10 @@ function img_size(width,height){
     head.appendChild(s);
 }
 
-document.getElementById('textarea').value=`https://unsplash.com/sitemaps/photos/promoted3.xml`
+document.getElementById('textarea').value=`https://unsplash.com/sitemaps/photos/promoted.xml
+https://unsplash.com/sitemaps/photos/promoted1.xml
+https://unsplash.com/sitemaps/photos/promoted2.xml
+https://unsplash.com/sitemaps/photos/promoted3.xml`
 
 document.getElementById("cheker").checked = false;
 
@@ -155,6 +158,9 @@ let countIMG
 let consta
 
 function rez_imgout(){
+	document.getElementById("imgout").innerHTML="Ждите.."
+		document.getElementById("imgout").style.background = "red";
+		alert('Колличество не проиндексированных: '+errorlink)
 	countIMG=parseInt(document.getElementById("mySelectOUT").value,10)
 	consta=countIMG+1
 	if (countIMG>10){
@@ -162,7 +168,6 @@ function rez_imgout(){
 	}else {
 		img_size(500,500)
 	}
-	alert('Колличество не проиндексированных: '+errorlink)
 	document.getElementById("finded").style.display='block';
 	document.getElementById("mySelectId").style.display='block';
 	document.getElementById("finded").innerHTML="Найдено изображений: "+(addrnew.length).toLocaleString()
@@ -183,6 +188,8 @@ function rez_imgout(){
 			}
 		}
 		document.getElementById("work_area").innerHTML=visio.join('')
+	document.getElementById("imgout").innerHTML="Показать изображения из БД"
+	document.getElementById("imgout").style.background = "#2b995b";
 }
 
 var select = document.getElementById('mySelectId');
