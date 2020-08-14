@@ -111,6 +111,7 @@ for(k;k<stringArray.length; k++){
 	address='http://'+stringArray[k]
 	   }
 	if(isValid(address,/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g)){
+		alert(addrnew[0])
 		let url = new URL(address)
 		let host = url.hostname
 		let url1 = new URL(address)
