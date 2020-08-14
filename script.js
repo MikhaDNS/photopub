@@ -162,7 +162,7 @@ function rez_imgout(){
 		document.getElementById("imgout").style.background = "red";
 		alert('Колличество не проиндексированных: '+errorlink)
 	countIMG=parseInt(document.getElementById("mySelectOUT").value,10)
-	consta=countIMG+1
+	consta=Math.min(countIMG+1,addrnew.length)
 	if (countIMG>10){
 		img_size(10000/countIMG,10000/countIMG)
 	}else {
