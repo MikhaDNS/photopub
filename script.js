@@ -72,7 +72,6 @@ let address
 				  let element = urls[i]
 				  if(!isValid(element,/\.xml/g)){
 					  if(isValid(element,/(?:\.|=)(?:jpg|jpeg|png|bmp|ico|gif|tif|tiff)/g)){
-						  alert('klo')
 						addrnew.push(element)
 					  }
 				  }else{
@@ -111,7 +110,6 @@ for(k;k<stringArray.length; k++){
 	address='http://'+stringArray[k]
 	   }
 	if(isValid(address,/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g)){
-		alert(addrnew[0])
 		let url = new URL(address)
 		let host = url.hostname
 		let url1 = new URL(address)
@@ -141,9 +139,7 @@ for(k;k<stringArray.length; k++){
 							  rez_func2(element,urls.length)
 							 	
 						}else if(isValid(element,/(?:\.|=)(?:jpg|jpeg|png|bmp|ico|gif|tif|tiff)/g)){
-							alert('oo')
 							addrnew.push(element)
-							alert(addrnew[0])
 						}
 				}
 			}
@@ -157,6 +153,7 @@ for(k;k<stringArray.length; k++){
 
 
 }	
+	alert(addrnew[0])
 }
 
 let countIMG
