@@ -72,6 +72,7 @@ let address
 				  let element = urls[i]
 				  if(!isValid(element,/\.xml/g)){
 					  if(isValid(element,/(?:\.|=)(?:jpg|jpeg|png|bmp|ico|gif|tif|tiff)/g)){
+						  alert('klo')
 						addrnew.push(element)
 					  }
 				  }else{
