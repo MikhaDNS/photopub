@@ -1,57 +1,56 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
- <title>PicturePUB</title>
- <link rel="stylesheet" type="text/css" href="style.css">
-<meta name="robots" content="index, follow">
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" href="https://photopub.cf/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="icon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="icon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="icon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="icon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="icon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="icon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
-<link rel="manifest" href="icon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="icon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-</head>
-<body>
-<h1 class="main_text">PicturePUB</h1>
- 	
-<h1 class="input_text"><input type="checkbox" id="cheker" onchange="fun1()"> Добавить свою БД</h1>
-<textarea  style='display:none' id="textarea"></textarea>
-<br>
-<button id="neww" onClick="rez_func();" type="submit">Скачать БД</button>
-<button id="rnd" onClick="rez_randall();" type="submit">Мне повезет!</button>
-<button id="imgout" onClick="rez_imgout();" type="submit">Показать изображения из БД</button>
-<h2 class="input_text">Изображений на странице:</h2>
-  <select id="mySelectOUT">
-    <option value="100">100</option>
-    <option value="50">50</option>
-    <option value="25">25</option>
-	<option value="10">10</option>
-    <option value="5">5</option>
-	<option value="1">1</option>
-  </select><br>
-  <hr>
-<div style='display:none' id="rnd_area"></div>
-<h2 style='display:none' id="finded" class="finded_text">Найдено изображений: 0<h2>
-<div style='display:none' id="work_area" class="div_image"></div>
-<button style='display:none'id="ba" type="submit">&larr; Назад</button>
-<button style='display:none'id="fr"  type="submit">Вперед &rarr;</button>
-  <select style='display:none' id="mySelectId">
-  </select>
-	<br>
-</body> 
-	   <script type="text/javascript" src="script.js"></script>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>PicturePUB</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta name="robots" content="index, follow">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="https://photopub.cf/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="icon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="icon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="icon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="icon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="icon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="icon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+		<link rel="manifest" href="icon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="icon/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body>
+		<h1 class="main_text">PicturePUB</h1>	
+		<h1 class="input_text"><input type="checkbox" id="cheker" onchange="fun1()"> Добавить свою БД</h1>
+		<textarea  style='display:none' id="textarea"></textarea>
+		<br>
+		<button id="neww" onClick="rez_func();" type="submit">Скачать БД</button>
+		<button id="rnd" onClick="rez_randall();" type="submit">Мне повезет!</button>
+		<button id="imgout" onClick="rez_imgout();" type="submit">Показать изображения из БД</button>
+		<h2 class="input_text">Изображений на странице:</h2>
+		<select id="mySelectOUT">
+			<option value="100">100</option>
+			<option value="50">50</option>
+			<option value="25">25</option>
+			<option value="10">10</option>
+			<option value="5">5</option>
+			<option value="1">1</option>
+		</select>
+		<br>
+		<hr>
+		<div style='display:none' id="rnd_area"></div>
+		<h2 style='display:none' id="finded" class="finded_text">Найдено изображений: 0<h2>
+		<div style='display:none' id="work_area" class="div_image"></div>
+		<button style='display:none'id="ba" type="submit">&larr; Назад</button>
+		<button style='display:none'id="fr"  type="submit">Вперед &rarr;</button>
+		<select style='display:none' id="mySelectId"></select>
+		<br>
+	</body> 
+	<script type="text/javascript" src="script.js"></script>
 </html>
