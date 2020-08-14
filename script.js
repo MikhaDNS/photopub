@@ -155,7 +155,7 @@ for(k;k<stringArray.length; k++){
 
 let countIMG
 let consta
-
+let kolich
 function rez_imgout(){
 	document.getElementById("imgout").innerHTML="Ждите.."
 		document.getElementById("imgout").style.background = "red";
@@ -170,7 +170,7 @@ function rez_imgout(){
 	document.getElementById("finded").style.display='block';
 	document.getElementById("mySelectId").style.display='block';
 	document.getElementById("finded").innerHTML="Найдено изображений: "+(addrnew.length).toLocaleString()
-	let kolich=Math.ceil(addrnew.length/countIMG)
+	kolich=Math.ceil(addrnew.length/countIMG)
 	let objSel = document.getElementById("mySelectId");
 	for(let z=0; z<kolich; z++){
 		objSel.options[z] = new Option(z+1, z);
@@ -217,6 +217,13 @@ document.querySelector('#ba').addEventListener('click', function() {
 	let select=document.querySelector('#mySelectId');
 	let tek=parseInt(select.value,10)
 	tek--
+        if(tek==0){
+           document.getElementById("ba").style.display='none';
+	   document.getElementById("fr").style.display='inline-block';
+	}else{
+           document.getElementById("ba").style.display='inline-block';
+	   document.getElementById("fr").style.display='inline-block';
+	}
 	change_img(tek)
 	select.selectedIndex = tek
 });
@@ -224,6 +231,13 @@ document.querySelector('#fr').addEventListener('click', function() {
 	let select=document.querySelector('#mySelectId');
 	let tek=parseInt(select.value,10)
 	tek++
+	if(tek==kolich-1){
+           document.getElementById("ba").style.display='inline-block';
+	   document.getElementById("fr").style.display='none';
+	}else{
+           document.getElementById("ba").style.display='inline-block';
+	   document.getElementById("fr").style.display='inline-block';
+	}
 	change_img(tek)
 	select.selectedIndex = tek
 });
