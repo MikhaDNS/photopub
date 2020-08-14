@@ -210,6 +210,16 @@ let select = document.getElementById('mySelectId');
 
 select.addEventListener('change', function(){  
   let val = parseInt(this.value,10);
+if(val==kolich-1){
+           document.getElementById("ba").style.display='inline-block';
+	   document.getElementById("fr").style.display='none';
+}else if(val==0){
+document.getElementById("ba").style.display='none';
+	   document.getElementById("fr").style.display='inline-block';
+	}else{
+           document.getElementById("ba").style.display='inline-block';
+	   document.getElementById("fr").style.display='inline-block';
+	}
 change_img(val)
 });
 
