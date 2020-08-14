@@ -160,6 +160,7 @@ let countIMG
 let consta
 
 function rez_imgout(){
+	alert(addrnew[0],addrnew[1])
 	document.getElementById("imgout").innerHTML="Ждите.."
 		document.getElementById("imgout").style.background = "red";
 		alert('Колличество не проиндексированных: '+errorlink)
