@@ -210,7 +210,10 @@ select.addEventListener('change', function(){
 });
 
 document.querySelector('#ba').addEventListener('click', function() {
-  alert(document.querySelector('#mySelectId').value)
+	let select=document.querySelector('#mySelectId');
+	let tek=parseInt(select.value,10)
+	tek--
+	select.selectedIndex = tek
 });
 
 
