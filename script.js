@@ -174,6 +174,7 @@ function rez_imgout() {
 		document.getElementById("ba").style.display='none'
 		document.getElementById("fr").style.display='none'
 		document.getElementById("play").style.display='none'
+		document.getElementById("inp").style.display='none'
 	}
 	let visio=[]
 	document.getElementById("work_area").style.display='block';
@@ -223,7 +224,7 @@ document.querySelector('#ba').addEventListener('click', function() {
 	let tek=parseInt(select.value,10)
 	let value=chek(tek)
 	if (value==-1) {
-		alert('Введите целое число')
+		alert('Введите корректное число страниц')
 	}else{
 		value--
 		visable_button(value)
@@ -237,7 +238,7 @@ function btfr() {
 	let tek=parseInt(select.value,10)
 	let value=chek(tek)
 	if (value==-1) {
-		alert('Введите целое число')
+		alert('Введите корректное число страниц')
 	}else{
 		value++
 		visable_button(value)
