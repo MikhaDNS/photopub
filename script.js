@@ -170,9 +170,11 @@ function rez_imgout() {
 	if (kolich!=1) {
 		document.getElementById("ba").style.display='none'
 		document.getElementById("fr").style.display='inline-block'
+		document.getElementById("play").style.display='inline-block'
 	} else {
 		document.getElementById("ba").style.display='none'
 		document.getElementById("fr").style.display='none'
+		document.getElementById("play").style.display='none'
 	}
 	let visio=[]
 	document.getElementById("work_area").style.display='block';
@@ -199,18 +201,25 @@ function change_img(val) {
 	document.getElementById("work_area").innerHTML=visio.join('')
 }
 
-document.getElementById('mySelectId').addEventListener('change', function() {  
-	let val = parseInt(this.value,10)
+function visable_button(val) {
 	if (val==kolich-1) {
 		document.getElementById("ba").style.display='inline-block'
 		document.getElementById("fr").style.display='none'
+		document.getElementById("play").style.display='none'
 	} else if (val==0) {
 		document.getElementById("ba").style.display='none'
 		document.getElementById("fr").style.display='inline-block'
+		document.getElementById("play").style.display='inline-block'
 	} else {
 		document.getElementById("ba").style.display='inline-block'
 		document.getElementById("fr").style.display='inline-block'
+		document.getElementById("play").style.display='inline-block'
 	}
+}
+
+document.getElementById('mySelectId').addEventListener('change', function() {  
+	let val = parseInt(this.value,10)
+	visable_button(val)
 	change_img(val)
 });
 
@@ -218,31 +227,44 @@ document.querySelector('#ba').addEventListener('click', function() {
 	let select=document.querySelector('#mySelectId')
 	let tek=parseInt(select.value,10)
 	tek--
-	if (tek==0) {
-		document.getElementById("ba").style.display='none'
-		document.getElementById("fr").style.display='inline-block'
-	} else {
-		document.getElementById("ba").style.display='inline-block'
-		document.getElementById("fr").style.display='inline-block'
-	}
+	visable_button(tek)
 	change_img(tek)
 	select.selectedIndex = tek
 });
 
-document.querySelector('#fr').addEventListener('click', function() {
-	this.text="kkj"
+function btfr() {
 	let select=document.querySelector('#mySelectId')
 	let tek=parseInt(select.value,10)
 	tek++
-	if (tek==kolich-1) {
-		document.getElementById("ba").style.display='inline-block'
-		document.getElementById("fr").style.display='none'
-	} else {
-		document.getElementById("ba").style.display='inline-block'
-		document.getElementById("fr").style.display='inline-block'
-	}
+	visable_button(tek)
 	change_img(tek)
 	select.selectedIndex = tek
+}
+
+document.querySelector('#fr').addEventListener('click', function() {
+	btfr()
+});
+
+let intervalId = 0
+
+document.querySelector('#play').addEventListener('click', function() {
+	function stop_timer() {
+		document.querySelector('#play').innerHTML="СТАРТ &#9658;"
+		clearInterval(intervalId)
+		intervalId = 0
+	}
+	if (intervalId > 0) {
+		stop_timer()
+	} else {
+		intervalId = setInterval(() => {
+					 if (parseInt(document.querySelector('#mySelectId').value,10)==kolich-1) {
+						stop_timer()
+					 } else {
+						btfr()
+					 }
+					}, 5000);
+		this.innerHTML="СТОП &#9200;"
+	}
 });
 
 function rez_randall() {
