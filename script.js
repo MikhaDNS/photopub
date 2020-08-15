@@ -148,7 +148,7 @@ let consta
 let kolich
 
 function rez_imgout() {
-	document.getElementById('mySelectId').innerHTML='';
+	document.getElementById('inp').value='1';
 	document.getElementById("imgout").innerHTML="Ждите.."
 	document.getElementById("imgout").style.background = "red"
 	alert('Колличество не проиндексированных: '+errorlink)
@@ -159,14 +159,13 @@ function rez_imgout() {
 	}else {
 		img_size(500,500)
 	}
-	document.getElementById("finded").style.display='block'
-	document.getElementById("mySelectId").style.display='block'
-	document.getElementById("finded").innerHTML="Найдено изображений: "+(addrnew.length).toLocaleString()
 	kolich=Math.ceil(addrnew.length/countIMG)
-	let objSel = document.getElementById("mySelectId")
-	for (let z=0; z<kolich; z++) {
-		objSel.options[z] = new Option(z+1, z)
-	}
+	document.getElementById("max_str").innerHTML="Всего страниц: "+kolich.toLocaleString()
+	document.getElementById("tek_str").innerHTML="Текущая страница: 1 "
+	document.getElementById("vis").style.display='block'
+	document.getElementById("finded").style.display='block'
+	document.getElementById("finded").innerHTML="Найдено изображений: "+(addrnew.length).toLocaleString()
+	
 	if (kolich!=1) {
 		document.getElementById("ba").style.display='none'
 		document.getElementById("fr").style.display='inline-block'
@@ -202,11 +201,12 @@ function change_img(val) {
 }
 
 function visable_button(val) {
-	if (val==kolich-1) {
+	document.getElementById("tek_str").innerHTML="Текущая страница: "+val.toLocaleString()
+	if (val==kolich) {
 		document.getElementById("ba").style.display='inline-block'
 		document.getElementById("fr").style.display='none'
 		document.getElementById("play").style.display='none'
-	} else if (val==0) {
+	} else if (val==1) {
 		document.getElementById("ba").style.display='none'
 		document.getElementById("fr").style.display='inline-block'
 		document.getElementById("play").style.display='inline-block'
@@ -217,28 +217,33 @@ function visable_button(val) {
 	}
 }
 
-document.getElementById('mySelectId').addEventListener('change', function() {  
-	let val = parseInt(this.value,10)
-	visable_button(val)
-	change_img(val)
-});
 
 document.querySelector('#ba').addEventListener('click', function() {
-	let select=document.querySelector('#mySelectId')
+	let select=document.querySelector('#inp')
 	let tek=parseInt(select.value,10)
-	tek--
-	visable_button(tek)
-	change_img(tek)
-	select.selectedIndex = tek
+	let value=chek(tek)
+	if (value==-1) {
+		alert('Введите целое число')
+	}else{
+		value--
+		visable_button(value)
+		change_img(value-1)
+		select.value = value
+	}
 });
 
 function btfr() {
-	let select=document.querySelector('#mySelectId')
+	let select=document.querySelector('#inp')
 	let tek=parseInt(select.value,10)
-	tek++
-	visable_button(tek)
-	change_img(tek)
-	select.selectedIndex = tek
+	let value=chek(tek)
+	if (value==-1) {
+		alert('Введите целое число')
+	}else{
+		value++
+		visable_button(value)
+		change_img(value-1)
+		select.value = value
+	}
 }
 
 document.querySelector('#fr').addEventListener('click', function() {
@@ -257,7 +262,7 @@ document.querySelector('#play').addEventListener('click', function() {
 		stop_timer()
 	} else {
 		intervalId = setInterval(() => {
-					 if (parseInt(document.querySelector('#mySelectId').value,10)==kolich-1) {
+					 if (parseInt(document.querySelector('#inp').value,10)==kolich) {
 						stop_timer()
 					 } else {
 						btfr()
@@ -266,6 +271,28 @@ document.querySelector('#play').addEventListener('click', function() {
 		this.innerHTML="СТОП &#9200;"
 	}
 });
+
+function chek(value) {
+	let otv=-1
+	if (Number.isInteger(value) && value<=kolich && value>=1) {
+		otv=value
+	}
+	return otv
+}
+
+(function() {
+	document.getElementById("inp").addEventListener('keydown', function(e) {
+		if (e.keyCode === 13) {
+			let value=chek(parseInt(this.value,10))
+			if (value==-1) {
+				alert('Введите корректное число страниц')
+			}else{
+				visable_button(value)
+				change_img(value-1)
+			}
+		}
+	});
+})();
 
 function rez_randall() {
 	let randval = Math.floor(Math.random() * addrnew.length)	
