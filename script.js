@@ -170,6 +170,7 @@ function rez_imgout() {
 		document.getElementById("ba").style.display='none'
 		document.getElementById("fr").style.display='inline-block'
 		document.getElementById("play").style.display='inline-block'
+		document.getElementById("inp").style.display='inline-block'
 	} else {
 		document.getElementById("ba").style.display='none'
 		document.getElementById("fr").style.display='none'
