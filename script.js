@@ -230,6 +230,7 @@ document.querySelector('#ba').addEventListener('click', function() {
 });
 
 document.querySelector('#fr').addEventListener('click', function() {
+	this.text="kkj"
 	let select=document.querySelector('#mySelectId')
 	let tek=parseInt(select.value,10)
 	tek++
