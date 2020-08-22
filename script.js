@@ -1,7 +1,4 @@
-document.getElementById('textarea').value=`https://unsplash.com/sitemaps/photos/promoted.xml
-https://unsplash.com/sitemaps/photos/promoted1.xml
-https://unsplash.com/sitemaps/photos/promoted2.xml
-https://unsplash.com/sitemaps/photos/promoted3.xml`
+document.getElementById('textarea').value=`Вставь свой url!`
 document.getElementById("cheker").checked = false
 let errorlink=0
 let count=0
